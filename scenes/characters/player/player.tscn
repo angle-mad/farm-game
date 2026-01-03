@@ -1,9 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://crh71vgayl5ju"]
+[gd_scene load_steps=49 format=3 uid="uid://crh71vgayl5ju"]
 
+[ext_resource type="Script" uid="uid://dxbb4wvfibc3h" path="res://scenes/characters/player/player.gd" id="1_6avc5"]
 [ext_resource type="Texture2D" uid="uid://drb36yk1me67n" path="res://assets/game/Characters/Basic Charakter Actions.png" id="1_t61fv"]
 [ext_resource type="Texture2D" uid="uid://r1dupa07835d" path="res://assets/game/Characters/Basic Charakter Spritesheet.png" id="2_686vu"]
 [ext_resource type="Script" uid="uid://dsjqwvilavq1j" path="res://scripts/state_machine/node_state_machine.gd" id="3_hss88"]
 [ext_resource type="Script" uid="uid://cfociiglclyuk" path="res://scenes/characters/player/idle_state.gd" id="4_qd3e3"]
+[ext_resource type="Script" uid="uid://ojpd8f1xonye" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hss88"]
 atlas = ExtResource("1_t61fv")
@@ -392,11 +394,12 @@ animations = [{
 radius = 9.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_6avc5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_kxlma")
-animation = &"idle_front"
+animation = &"idle_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -409,5 +412,10 @@ initial_node_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="State_Machine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("4_qd3e3")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Walk" type="Node" parent="State_Machine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("5_qd3e3")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
