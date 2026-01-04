@@ -17,6 +17,7 @@ texture = SubResource("AtlasTexture_xm6ke")
 collevtable_name = "log"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+y_sort_enabled = true
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_588pv")
 debug_color = Color(0.19484204, 0.6269659, 0.40038252, 0.41960785)

@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://0rn0yjgxobc3"]
+
+[ext_resource type="Theme" uid="uid://c2i0mliesyh0g" path="res://scenes/UI/game_ui_theme.tres" id="1_cvhcl"]
+[ext_resource type="Script" uid="uid://c88vjdrxrxwpx" path="res://scenes/UI/tools_panel.gd" id="2_4nk7w"]
+[ext_resource type="Texture2D" uid="uid://dse8uwyx6sgno" path="res://assets/game/Objects/Basic tools and meterials.png" id="2_rwq38"]
+[ext_resource type="Texture2D" uid="uid://blyina4qo84qm" path="res://assets/game/Objects/Basic Plants.png" id="3_4nk7w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiid7"]
+atlas = ExtResource("2_rwq38")
+region = Rect2(17, 0, 15, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kfn4s"]
+load_path = "res://.godot/imported/Basic tools and meterials.png-142a2741e2ff11d1b9f8bd8b192017f2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn53c"]
+atlas = SubResource("CompressedTexture2D_kfn4s")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w42na"]
+load_path = "res://.godot/imported/Basic tools and meterials.png-142a2741e2ff11d1b9f8bd8b192017f2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4osq"]
+atlas = SubResource("CompressedTexture2D_w42na")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgni2"]
+atlas = ExtResource("3_4nk7w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_26sdy"]
+load_path = "res://.godot/imported/Basic Plants.png-ff4131ac3d69e882c0ead6fb3ce1d2dc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd0rc"]
+atlas = SubResource("CompressedTexture2D_26sdy")
+region = Rect2(0, 16, 16, 16)
+
+[node name="ToolsPanel" type="PanelContainer"]
+offset_right = 26.0
+offset_bottom = 26.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_cvhcl")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_4nk7w")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ToolAxe" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_wiid7")
+icon_alignment = 1
+
+[node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_gn53c")
+icon_alignment = 1
+
+[node name="ToolWateringCan" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_i4osq")
+icon_alignment = 1
+
+[node name="ToolWheat" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_dgni2")
+icon_alignment = 1
+
+[node name="ToolTomato" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_bd0rc")
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWheat" to="." method="_on_tool_wheat_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTomato" to="." method="_on_tool_tomato_pressed"]
