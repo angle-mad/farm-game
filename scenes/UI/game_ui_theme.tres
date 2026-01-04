@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://c2i0mliesyh0g"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://c2i0mliesyh0g"]
 
 [ext_resource type="Texture2D" uid="uid://sxmura3ypx4k" path="res://assets/UI/basic_ui_sprites.png" id="1_rpqwa"]
+[ext_resource type="FontVariation" uid="uid://d3kfxos5vxbov" path="res://assets/UI/fonts/zx_palm_variation.tres" id="2_63rmd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63rmd"]
 atlas = ExtResource("1_rpqwa")
@@ -8,7 +9,22 @@ region = Rect2(201, 105, 30, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5kyg"]
 texture = SubResource("AtlasTexture_63rmd")
-region_rect = Rect2(7, 7, 16, 16)
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+region_rect = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5kyg"]
+atlas = ExtResource("1_rpqwa")
+region = Rect2(107, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vespo"]
+texture = SubResource("AtlasTexture_k5kyg")
+texture_margin_left = 3.9925058
+texture_margin_top = 4.0
+texture_margin_right = 4.115352
+texture_margin_bottom = 4.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vespo"]
 load_path = "res://.godot/imported/basic_ui_sprites.png-ecdf21b029ebda9b301103b874bb9907.ctex"
@@ -85,6 +101,11 @@ region_rect = Rect2(0, 0, 26, 28)
 [resource]
 DarkWoodPanel/base_type = &"PanelContainer"
 DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_k5kyg")
+InventoryItemPanel/base_type = &"PanelContainer"
+InventoryItemPanel/styles/panel = SubResource("StyleBoxTexture_vespo")
+InventoryLabel/base_type = &"Label"
+InventoryLabel/font_sizes/font_size = 8
+InventoryLabel/fonts/font = ExtResource("2_63rmd")
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10

@@ -13,7 +13,7 @@ vframes = 2
 frame = 5
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_of7pp")]
-collevtable_name = "corn"
+collectable_name = "wheat"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 y_sort_enabled = true

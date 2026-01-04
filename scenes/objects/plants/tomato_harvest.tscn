@@ -14,7 +14,7 @@ frame = 11
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_puqw6")]
 y_sort_enabled = true
-collevtable_name = "tomato"
+collectable_name = "tomato"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_1tax0")
