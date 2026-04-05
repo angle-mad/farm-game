@@ -19,7 +19,7 @@ func _on_tool_wheat_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.PlantWheat)
 
 func _on_tool_tomato_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.TillGround)
+	ToolManager.select_tool(DataTypes.Tools.PlantTomato)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
