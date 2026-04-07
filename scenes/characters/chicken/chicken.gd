@@ -8,7 +8,7 @@ func _ready() -> void:
 	DayAndNightCycleManager.time_tick.connect(_on_time_tick)
 
 func _on_time_tick(day: int, hour: int, minute: int):
-	if randf() < 0.001:
+	if randf() < 0.0001:
 		lay_egg()
 		
 func lay_egg() -> void:
