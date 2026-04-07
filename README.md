@@ -6,11 +6,10 @@ WASD to move
 LMB to use tool
 Ctrl + LMB to delete tilled grass tile while using the hoe tool
 
+# Image
+<img width="1316" height="722" alt="image" src="https://github.com/user-attachments/assets/df7defdb-c872-4902-b88b-958e81198d78" />
 
-
-
-
-
+# Godot Wakatime
 <a id="readme-top"></a>
 
 <!-- SHIELDS -->
